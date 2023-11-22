@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import toastLogo from "../../assets/toast.png";
 import styles from "./ToastPlayground.module.css";
 import Button from "../Button";
@@ -36,15 +37,15 @@ function ToastPlayground() {
         <div className={styles.row}>
           <div className={styles.label}>Variant</div>
           <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
-            <label htmlFor="variant-notice">
-              <input
-                id="variant-notice"
-                type="radio"
-                name="variant"
-                value="notice"
-              />
-              notice
-            </label>
+            {VARIANT_OPTIONS.map((option) => {
+              const id = `variant-${option}`;
+              return (
+                <label htmlFor={id}>
+                  <input id={id} type="radio" name="variant" value={option} />
+                  {option}
+                </label>
+              );
+            })}
 
             {/* TODO Other Variant radio buttons here */}
           </div>

@@ -13,6 +13,7 @@ function ToastPlayground() {
         <img alt="Cute toast mascot" src={toastLogo} />
         <h1>Toast Playground</h1>
       </header>
+      <Toast variant={variant}>{message}</Toast>
       <div className={styles.controlsWrapper}>
         <div className={styles.row}>
           <label

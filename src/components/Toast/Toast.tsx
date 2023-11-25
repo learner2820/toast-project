@@ -10,8 +10,11 @@ import {
 import VisuallyHidden from "../VisuallyHidden";
 
 import styles from "./Toast.module.css";
-interface Prop {}
-function Toast() {
+interface Prop {
+  variant: string;
+  children: string;
+}
+function Toast({ variant, children }: Prop) {
   return (
     <div className={`${styles.toast} ${styles.notice}`}>
       <div className={styles.iconContainer}>

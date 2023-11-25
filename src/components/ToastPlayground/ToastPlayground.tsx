@@ -3,6 +3,7 @@ import { useState } from "react";
 import toastLogo from "../../assets/toast.png";
 import styles from "./ToastPlayground.module.css";
 import Button from "../Button";
+import Toast from "../Toast";
 const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 function ToastPlayground() {
   const [message, setMessage] = useState("");

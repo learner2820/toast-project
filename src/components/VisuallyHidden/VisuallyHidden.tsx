@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./VisuallyHidden.module.css";
 interface Prop {
   children: string;
-  className: string;
+  className?: string;
 }
 const VisuallyHidden = ({ children, className = "", ...delegated }: Prop) => {
   const [forceShow, setForceShow] = React.useState(false);

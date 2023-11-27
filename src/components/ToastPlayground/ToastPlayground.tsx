@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import toastLogo from "../../assets/toast.png";
 import styles from "./ToastPlayground.module.css";

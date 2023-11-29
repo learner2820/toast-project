@@ -3,13 +3,31 @@ import toastLogo from "../../assets/toast.png";
 import styles from "./ToastPlayground.module.css";
 import Button from "../Button";
 import Toast from "../Toast";
+import ToastShelf from "../ToastShelf";
 const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
+interface toastInfo {
+  id: string;
+  message: string;
+  variant: string;
+}
+const newToasts: toastInfo[] = [
+  {
+    id: crypto.randomUUID(),
+    message: "Oh no!",
+    variant: "error",
+  },
+  {
+    id: crypto.randomUUID(),
+    message: "Logged in",
+    variant: "success",
+  },
+];
 function ToastPlayground() {
-  const [isRendered, setIsRendered] = useState(false);
+  const [toasts, setToasts] = useState(newToasts);
   const [message, setMessage] = useState("");
   const [variant, setVariant] = useState(VARIANT_OPTIONS[0]);
   const handleDismiss = () => {
-    setIsRendered(false);
+    //setIsRendered(false);
   };
   return (
     <div className={styles.wrapper}>
@@ -17,11 +35,12 @@ function ToastPlayground() {
         <img alt="Cute toast mascot" src={toastLogo} />
         <h1>Toast Playground</h1>
       </header>
-      {isRendered && (
+      {/* {isRendered && (
         <Toast variant={variant} handleDismiss={handleDismiss}>
           {message}
         </Toast>
-      )}
+      )} */}
+      <ToastShelf toasts={toasts} />
       <div className={styles.controlsWrapper}>
         <div className={styles.row}>
           <label
